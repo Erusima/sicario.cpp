@@ -1,4 +1,4 @@
-CFLAGS := -Wall
+CFLAGS := -Wall -ggdb
 INCLUDE :=
 LIBS :=
 CC := g++

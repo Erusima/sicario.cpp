@@ -1,14 +1,16 @@
-# SicarioCPP
+# sicario.cpp
 
 ## What is it?
 
-SicarioCPP is a simple Sicario C&C client made by Erusima and Dante383 (creator of original Sicario software).
+Sicario.cpp is a simple Sicario C&C client made by Erusima and Dante383 (creator of original Sicario software).
 
-## Compatibility
+## Roadmap
 
 - [X] Maintaining connection
 - [X] Sending packets
 - [X] Receiving packets
+- [X] Error catching
+    - [ ] Full error catching support
 - [ ] Commands
 	- [ ] Execute
 	- [ ] Set Interval
