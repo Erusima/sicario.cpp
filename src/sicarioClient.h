@@ -9,6 +9,7 @@
 #include <netdb.h>
 #include <unistd.h>
 #include <queue>
+#include "platform.h"
 
 enum SIC_ERROR {
     SIC_NO_ERROR=0,

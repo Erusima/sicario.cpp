@@ -39,8 +39,7 @@ void SicarioClient::sendData(std::string data) {
     if(data.length() <= 2042) {
         sendPacket("SC00(" + data + ")");
     } else {
-        for(short i=ceil(data.length() / 2042); i >= 0; i--)
-
+        //for(short i=ceil(data.length() / 2042); i >= 0; i--)
     }
 }
 
@@ -72,9 +71,8 @@ void SicarioClient::loginUser(std::string userKey) {
 std::string SicarioClient::interpretCommand(std::string command) {
     if(command.substr(0,7) == "execute") {
         return executeCommand(command.substr(7,command.length()-7));
-    } else if(command.substr(0,10) == "get system"
-            || command.substr(0,16) == "get architecture") {
-        return "UNKNOWN";
+    } else if(command.substr(0,10) == "get system") {
+        return getSystem();
     } else {
         this->errorQueue.push(SIC_INVALID_COMMAND);
         return "";

@@ -8,6 +8,7 @@ Sicario.cpp is a simple Sicario C&C client made by Erusima and Dante383 (creator
 
 - [X] Maintaining connection
 - [X] Sending packets
+    - [ ] Multi-packet data sending
 - [X] Receiving packets
 - [X] Error catching
     - [ ] Full error catching support
@@ -15,5 +16,9 @@ Sicario.cpp is a simple Sicario C&C client made by Erusima and Dante383 (creator
 	- [X] Execute
 	- [ ] Set Interval
 	- [ ] Get Architecture
-	- [ ] Get System
+	- [X] Get System
 	- [ ] Get Interval
+- [X] Multi-platform
+    - [ ] Windows
+    - [X] Linux
+    - [ ] FreeBSD

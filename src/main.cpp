@@ -20,7 +20,7 @@ const std::string msg_copyright = "Sicario_CPP // 2018 // Made by Erusima and Da
 int main(int argc, char** argv) {
     std::cout << msg_copyright;
     SicarioClient client(argv[1], 7319);
-    client.registerUser() << "\n";
+    client.registerUser();
     client.disconnect();
     while(true) {
         sleepFor(client.connInterval);
