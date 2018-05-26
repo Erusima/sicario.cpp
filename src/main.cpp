@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <stdlib.h>
+#include <stdio.h>
 
 #ifdef __unix__
     #include <unistd.h>
@@ -19,18 +20,18 @@ const std::string msg_copyright = "Sicario_CPP // 2018 // Made by Erusima and Da
 int main(int argc, char** argv) {
     std::cout << msg_copyright;
     SicarioClient client(argv[1], 7319);
-    std::cout << client.registerUser();
+    client.registerUser() << "\n";
     client.disconnect();
     while(true) {
+        sleepFor(client.connInterval);
         client.reconnect();
-        std::string data = client.receiveData(); // DEBUG
-        std::cout << data;
+        client.loginUser(client.userKey);
+        std::string data = client.receiveData();
         if(data != "") {
             std::string result = client.interpretCommand(data);
             client.sendData(result);
         }
         client.disconnect();
-        sleepFor(client.connInterval);
     }
 }
 

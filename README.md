@@ -11,8 +11,8 @@ Sicario.cpp is a simple Sicario C&C client made by Erusima and Dante383 (creator
 - [X] Receiving packets
 - [X] Error catching
     - [ ] Full error catching support
-- [ ] Commands
-	- [ ] Execute
+- [X] Commands
+	- [X] Execute
 	- [ ] Set Interval
 	- [ ] Get Architecture
 	- [ ] Get System
