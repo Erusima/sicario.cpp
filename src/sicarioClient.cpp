@@ -75,6 +75,8 @@ std::string SicarioClient::interpretCommand(std::string command) {
         return getSystem();
     } else if(command.substr(0,16) == "get architecture") {
         return getArchitecture();
+    } else if(command.substr(0,12) == "get interval") {
+        return std::to_string(this->connInterval);
     } else {
         this->errorQueue.push(SIC_INVALID_COMMAND);
         return "";

