@@ -73,25 +73,11 @@ std::string SicarioClient::interpretCommand(std::string command) {
         return executeCommand(command.substr(7,command.length()-7));
     } else if(command.substr(0,10) == "get system") {
         return getSystem();
+    } else if(command.substr(0,16) == "get architecture") {
+        return getArchitecture();
     } else {
         this->errorQueue.push(SIC_INVALID_COMMAND);
         return "";
     }
 }
 
-std::string executeCommand(std::string cmd) {
-    char buffer[128];
-    std::string result = "";
-    FILE* pipe = popen(cmd.c_str(), "r");
-    try {
-        while (!feof(pipe)) {
-            if (fgets(buffer, 128, pipe) != NULL)
-                result += buffer;
-        }
-    } catch (...) {
-        pclose(pipe);
-        throw;
-    }
-    pclose(pipe);
-    return result;
-}
