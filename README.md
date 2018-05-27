@@ -15,10 +15,11 @@ Sicario.cpp is a simple Sicario C&C client made by Erusima and Dante383 (creator
 - [X] Commands
 	- [X] Execute
 	- [ ] Set Interval
-	- [ ] Get Architecture
+	- [X] Get Architecture
 	- [X] Get System
-	- [ ] Get Interval
+	- [X] Get Interval
 - [X] Multi-platform
     - [ ] Windows
     - [X] Linux
     - [ ] FreeBSD
+- [ ] Client-side modules
