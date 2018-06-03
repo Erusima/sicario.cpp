@@ -9,12 +9,8 @@
 #include <netdb.h>
 #include <unistd.h>
 #include <queue>
+#include <cstdio>
 #include "platform.h"
-
-enum SIC_ERROR {
-    SIC_NO_ERROR=0,
-    SIC_INVALID_COMMAND
-};
 
 class SicarioClient {
     public:
@@ -34,8 +30,6 @@ class SicarioClient {
         std::string interpretCommand(std::string command);
 
         std::string userKey;
-        std::queue<SIC_ERROR> errorQueue;
-
         unsigned int connInterval;
     private:
         struct sockaddr_in connAddress;

@@ -39,7 +39,15 @@ void SicarioClient::sendData(std::string data) {
     if(data.length() <= 2042) {
         sendPacket("SC00(" + data + ")");
     } else {
-        //for(short i=ceil(data.length() / 2042); i >= 0; i--)
+        float temp=ceil(data.length() / 2042.f);
+        short maxPackets=temp;
+        for(short i=maxPackets; i > 0; i--) {
+            char buffer[2];
+            sprintf(buffer, "%02d", i);
+            sendPacket("SC" + std::string(buffer) + "("
+                    + data.substr((maxPackets-i) * 2042, 2042) + ")");
+        }
+	sendPacket("SC00(" + data.substr(maxPackets * 2042,data.length() % 2042) + ")");
     }
 }
 
@@ -78,7 +86,6 @@ std::string SicarioClient::interpretCommand(std::string command) {
     } else if(command.substr(0,12) == "get interval") {
         return std::to_string(this->connInterval);
     } else {
-        this->errorQueue.push(SIC_INVALID_COMMAND);
         return "";
     }
 }
