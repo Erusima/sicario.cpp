@@ -7,7 +7,6 @@
 #include <arpa/inet.h>
 #include <netinet/in.h>
 #include <netdb.h>
-#include <unistd.h>
 #include <queue>
 #include <cstdio>
 #include <sys/time.h>

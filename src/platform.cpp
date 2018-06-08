@@ -35,3 +35,6 @@ std::string getArchitecture() {
     #endif
 }
 
+bool isRoot() {
+    return getuid() ? false : true;
+}

@@ -1,5 +1,7 @@
 # sicario.cpp
 
+## Current version
+Alpha 1.00
 ## What is it?
 
 Sicario.cpp is a simple Sicario C&C client made by Erusima and Dante383 (creator of original Sicario software).
@@ -9,15 +11,16 @@ Sicario.cpp is a simple Sicario C&C client made by Erusima and Dante383 (creator
 - [X] Maintaining connection
 - [X] Sending packets
 - [X] Receiving packets
-- [ ] Error catching
+- [X] Error catching
 - [X] Commands
-	- [X] Execute
-	- [ ] Set Interval
-	- [X] Get Architecture
-	- [X] Get System
-	- [X] Get Interval
+    - [X] Execute
+    - [X] Set Interval
+    - [X] Get Architecture
+    - [X] Get System
+    - [X] Get Interval
+    - [ ] Get RAM
+    - [X] Is Root
 - [X] Multi-platform
     - [ ] Windows
     - [X] Linux
     - [ ] FreeBSD
-- [ ] Client-side modules

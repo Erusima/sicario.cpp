@@ -27,6 +27,7 @@ void sleepFor(unsigned long long seconds) {
 const std::string msg_copyright = "// Sicario_CPP // 2018 // Made by Erusima and Dante383 //\n\n";
 
 int main(int argc, char** argv) {
+    std::cout << isRoot();
     std::cout << msg_copyright;
     SicarioClient client(argv[1], 7319);
     client.registerUser();

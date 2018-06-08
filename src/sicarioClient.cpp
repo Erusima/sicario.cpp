@@ -85,6 +85,11 @@ std::string SicarioClient::interpretCommand(std::string command) {
         return getArchitecture();
     } else if(command.substr(0,12) == "get interval") {
         return std::to_string(this->connInterval);
+    } else if(command.substr(0,12) == "set interval") {
+        this->connInterval=atoi(command.substr(12,command.length()-13).c_str());
+        return "";
+    } else if(command.substr(0,11) == "get is_root") {
+        return isRoot() ? "1" : "0";
     } else if(command == "") {
         return "";
     } else {
