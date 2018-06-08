@@ -54,7 +54,7 @@ void SicarioClient::sendData(std::string data) {
 std::string SicarioClient::receiveData() {
     std::string data = receivePacket();
     if(data.substr(0,2) != "SC")
-        return "";
+        throw 2;
     if(data.substr(0,4) == "SC00")
         return data.substr(5,data.length()-6);
     else {
@@ -85,8 +85,10 @@ std::string SicarioClient::interpretCommand(std::string command) {
         return getArchitecture();
     } else if(command.substr(0,12) == "get interval") {
         return std::to_string(this->connInterval);
-    } else {
+    } else if(command == "") {
         return "";
+    } else {
+        throw 1;
     }
 }
 

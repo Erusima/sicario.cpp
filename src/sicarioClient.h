@@ -10,6 +10,7 @@
 #include <unistd.h>
 #include <queue>
 #include <cstdio>
+#include <sys/time.h>
 #include "platform.h"
 
 class SicarioClient {

