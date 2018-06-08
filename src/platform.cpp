@@ -38,3 +38,7 @@ std::string getArchitecture() {
 bool isRoot() {
     return getuid() ? false : true;
 }
+
+unsigned long long getRAM() {
+    return (sysconf(_SC_PHYS_PAGES) * sysconf(_SC_PAGE_SIZE))/1048576;
+}

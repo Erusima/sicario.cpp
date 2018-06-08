@@ -9,4 +9,6 @@ std::string executeCommand(std::string cmd);
 std::string getSystem();
 std::string getArchitecture();
 bool isRoot();
+unsigned long long getRAM();
+
 #endif

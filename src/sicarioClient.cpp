@@ -90,6 +90,8 @@ std::string SicarioClient::interpretCommand(std::string command) {
         return "";
     } else if(command.substr(0,11) == "get is_root") {
         return isRoot() ? "1" : "0";
+    } else if(command.substr(0,7) == "get ram") {
+        return std::to_string(getRAM());
     } else if(command == "") {
         return "";
     } else {

@@ -18,7 +18,7 @@ Sicario.cpp is a simple Sicario C&C client made by Erusima and Dante383 (creator
     - [X] Get Architecture
     - [X] Get System
     - [X] Get Interval
-    - [ ] Get RAM
+    - [X] Get RAM
     - [X] Is Root
 - [X] Multi-platform
     - [ ] Windows
